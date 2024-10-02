@@ -1,0 +1,70 @@
+/* CSS for Mobile Navigation Dropdown
+The following CSS styles control the visual behavior of the mobile navigation dropdown. The styles utilize an .active class to manage the display of the dropdown items and the backdrop effect.
+
+Backdrop: The :before pseudo-element provides a blurred backdrop that becomes visible when the .active class is added to the .navigation element.
+Dropdown Items: The visibility and scaling of the dropdown items are controlled with the .dropdown-wrapper and .dropdown-item classes, transitioning smoothly when the menu is activated. */
+
+
+
+
+
+
+
+
+/* Backdrop Effect on the Navigation */
+.navigation:before {
+    content: "";
+    width: 100%;
+    height: 0vh;
+    background: rgba(0, 0, 0, 0.6);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    position: absolute;
+    display: block;
+    top: 100%;
+    right: 0;
+    z-index: -1100;
+    opacity: 0;
+    transition:
+        height 0.5s,
+        opacity 0.5s;
+}
+
+/* Active State for the Navigation */
+.navigation.active:before {
+    height: 150vh;
+    opacity: 1;
+}
+
+/* Dropdown List and Items */
+.navigation.active .dropdown-wrapper {
+    opacity: 1;
+    transform: scaleY(1);
+    transition-delay: 0.15s;
+}
+
+.navigation.active .dropdown-item {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Top Bar Styling */
+.navigation .top-bar {
+    width: 100%;
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container Styling */
+.navigation .top-container {
+    width: 100%;
+    padding: 1rem;
+    /* Prevents padding and border from affecting height and width */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3.125rem;
+}
