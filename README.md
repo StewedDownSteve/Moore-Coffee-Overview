@@ -32,7 +32,7 @@ During this project, I gained valuable insights into effective web development p
 - The importance of managing workflow to avoid project creep, ensuring timely delivery and quality results.
 - A deep understanding of managing domain and DNS settings, which is crucial for deploying websites effectively.
 
-## Examples:
+
 
 
 
